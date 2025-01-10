@@ -24,7 +24,7 @@ pipeline {
                 script {
                     echo 'Ejecutando tests unitarios...'
                     // Ejecuta los tests con unittest
-                    bat "\"${env.PYTHON_PATH}\" -m unittest discover -s testselenium"
+                    bat "\"${env.PYTHON_PATH}\" -m unittest discover -s testselenium -p "test_*.py"
                 }
             }
         }
