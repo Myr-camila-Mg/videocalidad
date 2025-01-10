@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Definir la ruta al ejecutable de Python
-        PYTHON_PATH = 'C:/Users/sunmi/AppData/Local/Programs/Python/Python313/python.exe'
+        PYTHON_PATH = 'C:/Users/sunmi/AppData/Local/Programs/Python/Pyt
     }
 
     stages {
@@ -33,6 +33,7 @@ pipeline {
     post {
         success {
             // Notificación si los tests son exitosos
+            
             echo 'Tests ejecutados exitosamente'
         }
         failure {
