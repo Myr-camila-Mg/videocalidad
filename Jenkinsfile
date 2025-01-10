@@ -6,8 +6,8 @@ pipeline {
             steps {
                 script {
                     echo 'Instalando dependencias...'
-                    bat 'python3 -m ensurepip --upgrade'
-                    bat 'python3 -m pip install --upgrade pip'
+                    bat 'python -m ensurepip --upgrade'
+                    bat 'python -m pip install --upgrade pip'
                     bat 'pip install -r requirements.txt'
                     bat 'pip install selenium'
                 }
@@ -17,12 +17,13 @@ pipeline {
             steps {
                 script {
                     echo 'Ejecutando tests unitarios...'
-                    bat 'python3 -m unittest discover -s testselenium'
+                    bat 'python -m unittest discover -s testselenium'
                 }
             }
         }
     }
 }
+
 
 
 
