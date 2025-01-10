@@ -30,8 +30,3 @@ pipeline {
     }
 }
 
-        failure {
-            echo 'Pipeline fallido. Verifica los logs para más detalles.'
-        }
-    }
-}
