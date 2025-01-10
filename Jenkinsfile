@@ -14,7 +14,6 @@ pipeline {
                     // Crear un entorno virtual con el ejecutable de Python especificado
                     bat "\"${env.PYTHON_PATH}\" -m venv venv"  // Crea un entorno virtual
                     bat "\"${env.PYTHON_PATH}\" -m pip install --upgrade pip"  // Actualiza pip
-                    bat "\"${env.PYTHON_PATH}\" -m pip install -r requirements.txt"  // Instala dependencias
                     bat "\"${env.PYTHON_PATH}\" -m pip install selenium"  // Instalar Selenium
                 }
             }
