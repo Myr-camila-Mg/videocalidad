@@ -6,7 +6,9 @@ pipeline {
             steps {
                 script {
                     echo 'Instalando dependencias...'
-                    bat 'pip install --upgrade pip'
+                    bat 'python -m ensurepip --upgrade'
+                    bat 'python -m pip install --upgrade pip'
+                    bat 'pip install -r requirements.txt'
                     bat 'pip install selenium'
                 }
             }
