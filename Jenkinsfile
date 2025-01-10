@@ -40,7 +40,7 @@ pipeline {
             // Notificación si los tests fallan
             mail to: 'mcmurillo@unillanos.edu.co',
                  subject: 'Error en la ejecución de tests',
-                 body: 'Hubo un error al ejecutar los tests. Revisa Jenkins para más detalles.'
+                 body: 'Hubo un error al ejecutar los tests. Revisa Jenkins para más detalles por favor.'
         }
     }
 }
