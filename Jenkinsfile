@@ -31,12 +31,12 @@ pipeline {
             echo 'Tests ejecutados exitosamente'
         }
         failure {
-            mail to: 'mcmurillo@unillanos.edu.co',
-                 subject: 'Error en la ejecución de tests',
-                 body: 'Hola, hay un error. Adios.'
+            emailext to: 'mcmurillo@unillanos.edu.co',
+                     subject: 'Error en la ejecución de tests',
+                     body: 'Hola, hay un error. Adios.'
         }
-    
-}
+    }
+
 }
 
 
