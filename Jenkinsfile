@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     echo 'Ejecutando tests unitarios...'
-                    bat "\"${env.PYTHON_PATH}\" -m unittest discover -s testselenium -p \"test_*.py\""
+                    bat "\"${env.PYTHON_PATH}\" -m unittest discover -s testselenium -p \"tes_*.py\""
                 }
             }
         }
