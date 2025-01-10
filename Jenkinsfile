@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     echo 'Ejecutando tests unitarios...'
-                    bat "\"${env.PYTHON_PATH}\" -m unittest discover -s testselenium -p \"test_*.py\""
+                    bat "\"${env.PYTHON_PATH}\" -m unittest discover -s testselenium -p \"tes_*.py\""
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             echo 'Tests ejecutados exitosamente'
         }
         failure {
-            emailext to: 'mcmurillo@unillanos.edu.co',
+            emailext to: 'daniel.munoz.melendez@unillanos.edu.co',
                      subject: 'Error en la ejecución de tests',
                      body: 'Hola, hay un error.'
         }
