@@ -2,20 +2,36 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Preparación del entorno') {
             steps {
-                echo 'Hello World'
+                echo 'Instalando dependencias...'
+                sh 'pip install --upgrade pip'
+                sh 'pip install selenium'
             }
         }
-        stage('Desarrollo') {
+        stage('Ejecución de tests unitarios') {
             steps {
-                echo 'Hello 1'
+                echo 'Ejecutando tests unitarios...'
+                sh 'python -m unittest discover -s testselenium'
             }
         }
-         stage('compilaccion') {
-            steps {
-                echo 'Hello 2'
-            }
+    }
+
+    post {
+        always {
+            echo 'Pipeline terminado.'
+        }
+        success {
+            echo 'Pipeline completado con éxito.'
+        }
+        failure {
+            echo 'Pipeline fallido. Verifica los logs para más detalles.'
+        }
+    }
+}
+
+        failure {
+            echo 'Pipeline fallido. Verifica los logs para más detalles.'
         }
     }
 }
