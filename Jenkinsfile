@@ -6,8 +6,8 @@ pipeline {
             steps {
                 script {
                     echo 'Instalando dependencias...'
-                    sh 'pip install --upgrade pip'
-                    sh 'pip install selenium'
+                    bat 'pip install --upgrade pip'
+                    bat 'pip install selenium'
                 }
             }
         }
@@ -15,29 +15,11 @@ pipeline {
             steps {
                 script {
                     echo 'Ejecutando tests unitarios...'
-                    sh 'python -m unittest discover -s testselenium'
+                    bat 'python -m unittest discover -s testselenium'
                 }
             }
         }
     }
 
-    post {
-        always {
-            script {
-                echo 'Pipeline terminado.'
-            }
-        }
-        success {
-            script {
-                echo 'Pipeline completado con éxito.'
-            }
-        }
-        failure {
-            script {
-                echo 'Pipeline fallido. Verifica los logs para más detalles.'
-            }
-        }
-    }
-}
 
 
